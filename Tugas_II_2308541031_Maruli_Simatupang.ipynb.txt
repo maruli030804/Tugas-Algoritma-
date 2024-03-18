@@ -1,0 +1,282 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "d6e9a488",
+   "metadata": {
+    "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
+    "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
+    "execution": {
+     "iopub.execute_input": "2024-03-18T15:31:19.758625Z",
+     "iopub.status.busy": "2024-03-18T15:31:19.758097Z",
+     "iopub.status.idle": "2024-03-18T15:31:20.974619Z",
+     "shell.execute_reply": "2024-03-18T15:31:20.973239Z"
+    },
+    "papermill": {
+     "duration": 1.225354,
+     "end_time": "2024-03-18T15:31:20.977797",
+     "exception": false,
+     "start_time": "2024-03-18T15:31:19.752443",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "# This Python 3 environment comes with many helpful analytics libraries installed\n",
+    "# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python\n",
+    "# For example, here's several helpful packages to load\n",
+    "\n",
+    "import numpy as np # linear algebra\n",
+    "import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\n",
+    "\n",
+    "# Input data files are available in the read-only \"../input/\" directory\n",
+    "# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory\n",
+    "\n",
+    "import os\n",
+    "for dirname, _, filenames in os.walk('/kaggle/input'):\n",
+    "    for filename in filenames:\n",
+    "        print(os.path.join(dirname, filename))\n",
+    "\n",
+    "# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using \"Save & Run All\" \n",
+    "# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "ef558786",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-03-18T15:31:20.987491Z",
+     "iopub.status.busy": "2024-03-18T15:31:20.986841Z",
+     "iopub.status.idle": "2024-03-18T15:31:20.993535Z",
+     "shell.execute_reply": "2024-03-18T15:31:20.992565Z"
+    },
+    "papermill": {
+     "duration": 0.015667,
+     "end_time": "2024-03-18T15:31:20.997197",
+     "exception": false,
+     "start_time": "2024-03-18T15:31:20.981530",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "38\n",
+      "30\n",
+      "1140\n"
+     ]
+    }
+   ],
+   "source": [
+    "siswa = 38\n",
+    "waktu_yang_tersisa = 30 \n",
+    "print(siswa)\n",
+    "print(waktu_yang_tersisa)\n",
+    "print(siswa*waktu_yang_tersisa)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "c6c9bd85",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-03-18T15:31:21.009216Z",
+     "iopub.status.busy": "2024-03-18T15:31:21.008596Z",
+     "iopub.status.idle": "2024-03-18T15:31:21.017999Z",
+     "shell.execute_reply": "2024-03-18T15:31:21.014866Z"
+    },
+    "papermill": {
+     "duration": 0.020873,
+     "end_time": "2024-03-18T15:31:21.022388",
+     "exception": false,
+     "start_time": "2024-03-18T15:31:21.001515",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "JulianMaruliSimatupang\n"
+     ]
+    }
+   ],
+   "source": [
+    "nama_depan = 'Julian'\n",
+    "nama_tengah = \"Maruli\"\n",
+    "nama_belakang = \"Simatupang\"\n",
+    "print(nama_depan + nama_tengah + nama_belakang)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "708058b2",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-03-18T15:31:21.034262Z",
+     "iopub.status.busy": "2024-03-18T15:31:21.033262Z",
+     "iopub.status.idle": "2024-03-18T15:31:21.041214Z",
+     "shell.execute_reply": "2024-03-18T15:31:21.039826Z"
+    },
+    "papermill": {
+     "duration": 0.018206,
+     "end_time": "2024-03-18T15:31:21.044728",
+     "exception": false,
+     "start_time": "2024-03-18T15:31:21.026522",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Maruli Simatupang\n"
+     ]
+    }
+   ],
+   "source": [
+    "nama_depan = 'Maruli'\n",
+    "nama_tengah = ' '\n",
+    "nama_belakang = \"Simatupang\"\n",
+    "print(nama_depan + nama_tengah + nama_belakang)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "10236106",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-03-18T15:31:21.056460Z",
+     "iopub.status.busy": "2024-03-18T15:31:21.056071Z",
+     "iopub.status.idle": "2024-03-18T15:31:21.699792Z",
+     "shell.execute_reply": "2024-03-18T15:31:21.697532Z"
+    },
+    "papermill": {
+     "duration": 0.651863,
+     "end_time": "2024-03-18T15:31:21.701851",
+     "exception": true,
+     "start_time": "2024-03-18T15:31:21.049988",
+     "status": "failed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "ename": "StdinNotImplementedError",
+     "evalue": "raw_input was called, but this frontend does not support input requests.",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mStdinNotImplementedError\u001b[0m                  Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[5], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m waktu_yang_tersisa \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;43minput\u001b[39;49m\u001b[43m(\u001b[49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;124;43mBerapakah waktu yang tersisa buat saya?\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m)\u001b[49m\n\u001b[1;32m      2\u001b[0m waktu_yang_terbuang \u001b[38;5;241m=\u001b[39m \u001b[38;5;28minput\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mberapakah waktu yang terbuang?\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[1;32m      3\u001b[0m total_waktu \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mint\u001b[39m(waktu_yang_tersisa) \u001b[38;5;241m+\u001b[39m \u001b[38;5;28mint\u001b[39m(waktu_yang_terbuang)\n",
+      "File \u001b[0;32m/opt/conda/lib/python3.10/site-packages/ipykernel/kernelbase.py:1261\u001b[0m, in \u001b[0;36mKernel.raw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m   1259\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_allow_stdin:\n\u001b[1;32m   1260\u001b[0m     msg \u001b[38;5;241m=\u001b[39m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mraw_input was called, but this frontend does not support input requests.\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m-> 1261\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m StdinNotImplementedError(msg)\n\u001b[1;32m   1262\u001b[0m \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_input_request(\n\u001b[1;32m   1263\u001b[0m     \u001b[38;5;28mstr\u001b[39m(prompt),\n\u001b[1;32m   1264\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_parent_ident[\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mshell\u001b[39m\u001b[38;5;124m\"\u001b[39m],\n\u001b[1;32m   1265\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mget_parent(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mshell\u001b[39m\u001b[38;5;124m\"\u001b[39m),\n\u001b[1;32m   1266\u001b[0m     password\u001b[38;5;241m=\u001b[39m\u001b[38;5;28;01mFalse\u001b[39;00m,\n\u001b[1;32m   1267\u001b[0m )\n",
+      "\u001b[0;31mStdinNotImplementedError\u001b[0m: raw_input was called, but this frontend does not support input requests."
+     ]
+    }
+   ],
+   "source": [
+    "waktu_yang_tersisa = input(\"Berapakah waktu yang tersisa buat saya?\")\n",
+    "waktu_yang_terbuang = input(\"berapakah waktu yang terbuang?\")\n",
+    "total_waktu = int(waktu_yang_tersisa) + int(waktu_yang_terbuang)\n",
+    "print(\"jumlah waktu yang saya miliki adalah\" + str(total_waktu))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ff7a83ff",
+   "metadata": {
+    "papermill": {
+     "duration": null,
+     "end_time": null,
+     "exception": null,
+     "start_time": null,
+     "status": "pending"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "bilangan_keenam = input(\"masukkan bilangan keenam: \")\n",
+    "bilangan_ketiga = input(\"masukkan bilangan ketiga: \")\n",
+    "bilangan_ketujuh = input(\"masukkan bilangan ketujuh: \")\n",
+    "jumlah = float(bilangan_keenam) - float(bilangan_ketiga) + float(bilangan_ketujuh)\n",
+    "print(\"jumlah ketiga bilangan adalah\" + str(jumlah))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "13a32001",
+   "metadata": {
+    "papermill": {
+     "duration": null,
+     "end_time": null,
+     "exception": null,
+     "start_time": null,
+     "status": "pending"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "dockerImageVersionId": 30664,
+   "isGpuEnabled": false,
+   "isInternetEnabled": false,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.13"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 6.30491,
+   "end_time": "2024-03-18T15:31:22.430399",
+   "environment_variables": {},
+   "exception": true,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2024-03-18T15:31:16.125489",
+   "version": "2.5.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+
